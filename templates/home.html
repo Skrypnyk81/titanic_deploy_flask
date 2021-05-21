@@ -1,15 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Saresti sopravvissuto su Titanic?</title>
-</head>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-<body>
+{% extends 'base.html' %}
+
+{% block head_title %}{% endblock head_title %}
+
+{% block content %}
 <div class="container">
-    <form>
+    <form action="/form" method="post">
         <div class="row mt-3">
-            <select class="form-select" aria-label="Default select example">
+            <select class="form-select" aria-label="Default select example" name="pclass">
                 <option selected>Seleziona la classe di viaggio</option>
                 <option value="1">Prima</option>
                 <option value="2">Seconda</option>
@@ -17,20 +14,23 @@
             </select>
         </div>
         <div class="row mt-3">
-            <select class="form-select" aria-label="Default select example">
+            <select class="form-select" aria-label="Default select example" name="sex">
                 <option selected>Sceglie il sesso</option>
                 <option value="0">Maschile</option>
                 <option value="1">Feminile</option>
             </select>
         </div>
         <div class="row mt-3">
-            <select class="form-select" aria-label="Default select example">
+            <input type="text" class="form-control" placeholder="Eta da 0 a 76" name="age">
+        </div>
+        <div class="row mt-3">
+            <select class="form-select" aria-label="Default select example" name="sibsp">
                 <option selected>Inserisci fratello, sorella, fratellastro, sorellastra / marito, moglie (amanti e fidanzati sono contano)</option>
                 <option value="0">Nessuno</option>
                 <option value="1">Uno</option>
                 <option value="2">Due</option>
                 <option value="3">Tre</option>
-                <option value="4">Quatro</option>
+                <option value="4">Quattro</option>
                 <option value="5">Cinque</option>
                 <option value="6">Sei</option>
                 <option value="7">Sette</option>
@@ -38,7 +38,7 @@
             </select>
         </div>
         <div class="row mt-3">
-            <select class="form-select" aria-label="Default select example">
+            <select class="form-select" aria-label="Default select example" name="parch">
                 <option selected>Inserisci madre, padre / figlia, figlio, figliastra, figliastro</option>
                 <option value="0">Nessuno</option>
                 <option value="1">Uno</option>
@@ -52,10 +52,10 @@
             </select>
         </div>
         <div class="row mt-3">
-            <input type="text" class="form-control" placeholder="Seleziona il costo del biglietto 0-512" aria-label="First name">
+            <input type="text" class="form-control" placeholder="Digita il costo del biglietto 0-512" name="fare">
         </div>
         <div class="row mt-3">
-            <select class="form-select" aria-label="Default select example">
+            <select class="form-select" aria-label="Default select example" name="embarked">
                 <option selected>Seleziona il porto di imbarco</option>
                 <option value="0">Cherbourg</option>
                 <option value="1">Queenstown</option>
@@ -63,10 +63,8 @@
             </select>
         </div>
         <div class="row mt-3">
-            <button type="submit" class="btn btn-primary" >Sign in</button>
+            <button type="submit" class="btn btn-primary" >Proviamo a indovinare )</button>
         </div>
     </form>
 </div>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
-</body>
-</html>
+{% endblock content %}
