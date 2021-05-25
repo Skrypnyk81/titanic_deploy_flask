@@ -30,4 +30,12 @@ def form_case():
         return render_template('dead.html')
     else:
         return render_template('survival.html')
-    return render_template('home.html')
+
+
+@app.route('/contacts')
+def contacts_page():
+    return render_template('contacts.html')
+
+
+if __name__ == "__main__":
+   app.run(host='0.0.0.0', port=5000)
